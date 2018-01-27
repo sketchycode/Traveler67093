@@ -6,22 +6,27 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(PlayerProximity))]
 public class Portal : MonoBehaviour
 {
+		public bool portal_is_activated = false;
+
     private void Start()
     {
         PlayerProximity portalInteractive = GetComponent<PlayerProximity>();
         portalInteractive.PlayerProximal += InactivatePortal_PlayerProximal;
+		Animator animator = GetComponent<Animator>();
     }
 
     void Update()
     {
     }
 
-    private void InactivatePortal_PlayerProximal(object sender, System.EventArgs e)
+    public void InactivatePortal_PlayerProximal(object sender, System.EventArgs e)
     {
-        //SceneManager.LoadScene("cave", LoadSceneMode.Additive);
+//		portal_is_activated = false;
     }
 
-    private void ActivatePortal_PlayerProximal(object sender, System.EventArgs e)
+    public void ActivatePortal_PlayerProximal()
     {
+		Debug.Log("hello world!");
+//		portal_is_activated = true;
     }
 }
