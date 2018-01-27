@@ -8,6 +8,15 @@ public class PlayerInput : MonoBehaviour {
     public float speed = 3.0F;
     public float rotateSpeed = 3.0F;
 
+    public float sensitivityX = 10f;
+
+    public Transform lookCamera;
+
+    private void Start()
+    {
+        lookCamera = GetComponentInChildren<Camera>().transform;
+    }
+
     void Update()
     {
         CharacterController controller = GetComponent<CharacterController>();
@@ -15,5 +24,9 @@ public class PlayerInput : MonoBehaviour {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         float curSpeed = speed * Input.GetAxis("Vertical");
         controller.SimpleMove(forward * curSpeed);
+
+        float rot = Input.GetAxis("Mouse X") * sensitivityX;
+
+        transform.Rotate(Vector3.up, rot);
     }
 }
