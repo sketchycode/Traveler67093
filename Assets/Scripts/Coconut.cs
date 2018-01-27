@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(PlayerInteractable))]
 public class Coconut : MonoBehaviour
 {
-    private string[] scenePaths;
-
     private void Start()
     {
         PlayerInteractable coconutinteractive = GetComponent<PlayerInteractable>();
@@ -20,6 +18,11 @@ public class Coconut : MonoBehaviour
     {
         Rigidbody bouncycoconut = GetComponent<Rigidbody>();
         bouncycoconut.isKinematic = false;
+        SceneManager.LoadScene("cave", LoadSceneMode.Single);
+    }
+
+    private void LoadNextScene(object sender, System.EventArgs e)
+    {
         SceneManager.LoadScene("cave", LoadSceneMode.Single);
     }
 
