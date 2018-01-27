@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/amelia.unity
+    guid: 358d291b8cf2a404d8e082076494831d
+  - enabled: 1
+    path: Assets/Scenes/cave.unity
+    guid: d7d1d5ba36c6a484fb235207c183fdbf
+  - enabled: 1
+    path: Assets/Scenes/forest.unity
+    guid: be018861f793542448ebf99dfc1b4334

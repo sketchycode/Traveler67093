@@ -303,4 +303,4 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 994b3ff00decafc4f8e36d151b6119d3, type: 2}
-m_IsPrefabParent: 0
+  m_IsPrefabParent: 0

@@ -18,7 +18,7 @@ public class Portal : MonoBehaviour
 
     private void InactivatePortal_PlayerProximal(object sender, System.EventArgs e)
     {
-        SceneManager.LoadScene("cave", LoadSceneMode.Additive);
+        //SceneManager.LoadScene("cave", LoadSceneMode.Additive);
     }
 
     private void ActivatePortal_PlayerProximal(object sender, System.EventArgs e)
