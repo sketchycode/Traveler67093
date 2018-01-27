@@ -13,6 +13,8 @@ public class PlayerInput : MonoBehaviour {
 
     public Transform lookCamera;
 
+    private List<PlayerInteractable> interactableThings = new List<PlayerInteractable>();
+
     private void Start()
     {
         lookCamera = GetComponentInChildren<Camera>().transform;
@@ -32,5 +34,25 @@ public class PlayerInput : MonoBehaviour {
         float rot = Input.GetAxis("Mouse X") * sensitivityX;
 
         transform.Rotate(Vector3.up, rot);
+
+        if(Input.GetKeyDown(KeyCode.Space) && interactableThings.Count > 0)
+        {
+            interactableThings[0].DoTheInteractThing();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var interactableThing = other.GetComponent<PlayerInteractable>();
+        if (interactableThing != null)
+        {
+            interactableThings.Add(interactableThing);
+            Debug.Log("we found an interactable thing!");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        interactableThings.Remove(other.GetComponent<PlayerInteractable>());
     }
 }

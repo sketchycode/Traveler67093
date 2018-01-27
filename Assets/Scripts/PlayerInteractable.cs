@@ -9,6 +9,7 @@ public class PlayerInteractable : MonoBehaviour {
 
     public void DoTheInteractThing()
     {
+        Debug.Log("interacting a thing");
         if(PlayerInteracted != null)
         {
             PlayerInteracted(this, EventArgs.Empty);
