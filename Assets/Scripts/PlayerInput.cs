@@ -43,12 +43,16 @@ public class PlayerInput : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("in trigger");
         var interactableThing = other.GetComponent<PlayerInteractable>();
         if (interactableThing != null)
         {
             interactableThings.Add(interactableThing);
             Debug.Log("we found an interactable thing!");
+            if (interactableThing.name == "Portal")
+            {
+                var portal = GameObject.Find("Portal").GetComponent<Portal>();
+                portal.LoadNextScene();
+            }
         }
     }
 

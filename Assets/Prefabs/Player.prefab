@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114370491959949480}
   - component: {fileID: 136519666159499706}
   - component: {fileID: 143796226944153310}
+  - component: {fileID: 135559243515116490}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -83,8 +84,8 @@ Camera:
   m_GameObject: {fileID: 1190300439964168}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.25962368, g: 0.43888763, b: 0.7205882, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a43a85e94df2a42bf82b5bbc0bc30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 6
   strafeSpeed: 3
   rotateSpeed: 3
   sensitivityX: 10
@@ -159,6 +160,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1190300439964168}
   m_Enabled: 1
+--- !u!135 &135559243515116490
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065206705984608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136519666159499706
 CapsuleCollider:
   m_ObjectHideFlags: 1
