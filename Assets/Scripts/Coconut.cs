@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Portal))]
 public class Coconut : MonoBehaviour
 {
+    public Spin spin;
     private void Start()
     {
         PlayerInteractable coconutinteractive = GetComponent<PlayerInteractable>();
@@ -22,6 +23,7 @@ public class Coconut : MonoBehaviour
         Debug.Log("coconut fell");
         var portal = GameObject.Find("Portal").GetComponent<Portal>();
         portal.ActivatePortal();
+        this.spin.enabled = true;
         //Play coconut fell sound and stop sand mice/beach sound source
         //also play actual coconut fell sound effect.
     }
