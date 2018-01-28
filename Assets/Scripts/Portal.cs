@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class Portal : MonoBehaviour
 {
     public bool isPortalActive = false;
-
     private void Start()
     {
         PlayerInteractable portalInteractive = GetComponent<PlayerInteractable>();
@@ -35,6 +34,9 @@ public class Portal : MonoBehaviour
         MeshRenderer the_portal = GetComponent<MeshRenderer>();
         the_portal.material.color = Color.red;
         this.isPortalActive = true;
+        var portal_center = GameObject.Find("PortalCenter").GetComponent<PortalCenter>();
+        portal_center.Activate_Center();
+
     }
 
     public void LoadNextScene()
