@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44306907, g: 0.4855789, b: 0.53591377, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9c01991e6f65646a48af6a979891e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalState: inactive
+  isPortalActive: 0
 --- !u!114 &55135211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,6 +609,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1951987849899548, guid: 347264bff19cd594d8bce2b0ec57deb2, type: 2}
+      propertyPath: m_Name
+      value: Portal2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665949244472682, guid: 347264bff19cd594d8bce2b0ec57deb2, type: 2}
       propertyPath: m_Name
       value: Portal2
       objectReference: {fileID: 0}
