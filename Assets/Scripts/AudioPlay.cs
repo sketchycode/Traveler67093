@@ -15,7 +15,7 @@ public class AudioPlay : MonoBehaviour
     private void PlaySound_PlayerInteracted(object sender, System.EventArgs e)
     {
         Debug.Log("Test sound");
-        sound.Play();
+        //sound.Play();
     }
 
     void Update()
