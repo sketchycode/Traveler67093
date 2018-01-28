@@ -27,7 +27,7 @@ public class Receptacle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		receptacleRenderer = GetComponentInChildren<MeshRenderer>();	
+		receptacleRenderer = this.GetTheFuckingComponent<MeshRenderer>();	
 	}
 	
 	public void SetLightReceiving(bool isGettingLight) {

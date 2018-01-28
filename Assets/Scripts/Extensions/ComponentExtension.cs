@@ -5,10 +5,10 @@ public static class ComponentExtensions {
         var c = srcComp.GetComponent<T>();
         if(c != null) { return c; }
 
-        c = srcComp.GetComponentInParent<T>();
+        c = srcComp.GetComponentInChildren<T>();
         if(c != null) { return c; }
 
-        c = srcComp.GetComponentInChildren<T>();
+        c = srcComp.GetComponentInParent<T>();
         return c;
     }
 }
