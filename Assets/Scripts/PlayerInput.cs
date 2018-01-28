@@ -55,7 +55,6 @@ public class PlayerInput : MonoBehaviour {
         if (interactableThing != null && interactableThing.tag != "Player")
         {
             interactableThings.Add(interactableThing);
-            Debug.Log("we found an interactable thing! (" + other.name + ")");
 
             var portal = interactableThing.GetTheFuckingComponent<Portal>();
             if (portal != null && portal.isPortalActive)
@@ -68,7 +67,6 @@ public class PlayerInput : MonoBehaviour {
     private void OnTriggerExit(Collider other)
     {
         interactableThings.Remove(other.GetTheFuckingComponent<PlayerInteractable>());
-        Debug.Log("interactable things count: " + interactableThings.Count);
     }
 
 

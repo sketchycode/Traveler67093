@@ -15,12 +15,8 @@ public class PlayerInteractable : MonoBehaviour {
     public void DoTheInteractThing(PlayerInput player)
     {
         if(CanPlayerInteract == null || CanPlayerInteract(player)) {
-            Debug.Log("interacting with this " + name);
             if (PlayerInteracted != null) { PlayerInteracted(this, EventArgs.Empty); }
             if (PlayerInteractedAction != null) { PlayerInteractedAction(player); }
-        }
-        else {
-            Debug.Log("can't interact with this " + name);
         }
     }
 }

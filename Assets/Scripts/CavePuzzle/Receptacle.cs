@@ -12,26 +12,37 @@ public class Receptacle : MonoBehaviour {
 
 	public event EventHandler ActiveStateChanged;
 
-	private bool isActive;
-	public bool IsActive {
-		get { return isActive; }
+	private List<LightRay> illuminatingRays = new List<LightRay>();
+
+	private bool isReceptacleActive;
+	public bool IsReceptacleActive {
+		get { return isReceptacleActive; }
 		private set {
-			if (value != isActive){
-				isActive = value;
+			if (value != isReceptacleActive) {
+				isReceptacleActive = value;
 				if (ActiveStateChanged != null) {
 					ActiveStateChanged(this, EventArgs.Empty);
 				}
+				Debug.Log("recept active state now: " + value);
 			}
+			receptacleRenderer.material = value ? receptacleActiveMaterial : receptacleInactiveMaterial;
 		}
 	}
 
 	// Use this for initialization
 	void Start () {
-		receptacleRenderer = this.GetTheFuckingComponent<MeshRenderer>();	
+		receptacleRenderer = this.GetTheFuckingComponent<MeshRenderer>();
+		LightRayIlluminated(null, false); // trigger initial state
 	}
-	
-	public void SetLightReceiving(bool isGettingLight) {
-		IsActive = isGettingLight && isWantingLight;
-		receptacleRenderer.material = (isGettingLight && isWantingLight) ? receptacleActiveMaterial : receptacleInactiveMaterial;
-	}
+
+    internal void LightRayIlluminated(LightRay lightRay, bool isIlluminating)
+    {
+		if (isIlluminating) {
+			if(illuminatingRays.Contains(lightRay)) { return; }
+			illuminatingRays.Add(lightRay);
+		}
+		else if (!isIlluminating) { illuminatingRays.Remove(lightRay); }
+
+		IsReceptacleActive = isWantingLight ? illuminatingRays.Count > 0 : illuminatingRays.Count == 0;
+    }
 }

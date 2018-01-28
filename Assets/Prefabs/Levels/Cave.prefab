@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 33859543151737002}
   - component: {fileID: 23102330051109296}
   - component: {fileID: 64494856374110238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cave_Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 33462143227366486}
   - component: {fileID: 23525784814215512}
   - component: {fileID: 64706798338352638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cave_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1232361237785358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -415, y: 4, z: 59.001}
+  m_LocalPosition: {x: -114.70456, y: 19.8, z: -8.760131}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4283823109120906}
@@ -244,7 +244,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100002, guid: 892daf863b7d45a47a00eb3185ad2142, type: 3}
+  - {fileID: 2100000, guid: d3a2821cb0023964f8529be53dbce423, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -380,7 +380,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100002, guid: 892daf863b7d45a47a00eb3185ad2142, type: 3}
+  - {fileID: 2100000, guid: 002919844b73bb44bbad9600f0445911, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
