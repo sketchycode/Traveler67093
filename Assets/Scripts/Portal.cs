@@ -44,6 +44,10 @@ public class Portal : MonoBehaviour
         {
             SceneManager.LoadScene("cave", LoadSceneMode.Single);
         }
+        else if (scene.name == "forest")
+        {
+            SceneManager.LoadScene("credits", LoadSceneMode.Single);
+        }
         else
         {
             SceneManager.LoadScene("forest", LoadSceneMode.Single);

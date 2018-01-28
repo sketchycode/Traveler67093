@@ -11,6 +11,7 @@ public class PlayerInteractable : MonoBehaviour {
     public Func<PlayerInput, bool> CanPlayerInteract;
     public Action<PlayerInput> PlayerInteractedAction;
     public string Scene;
+    public int TotalGlyphsTranslated = 0;
 
     public void DoTheInteractThing(PlayerInput player)
     {
@@ -18,5 +19,6 @@ public class PlayerInteractable : MonoBehaviour {
             if (PlayerInteracted != null) { PlayerInteracted(this, EventArgs.Empty); }
             if (PlayerInteractedAction != null) { PlayerInteractedAction(player); }
         }
+        Debug.Log(PlayerInteracted);
     }
 }

@@ -22,6 +22,8 @@ public class Coconut : MonoBehaviour
         Debug.Log("coconut fell");
         var portal = GameObject.Find("Portal").GetComponent<Portal>();
         portal.ActivatePortal();
+        //Play coconut fell sound and stop sand mice/beach sound source
+        //also play actual coconut fell sound effect.
     }
 
     void Update()
