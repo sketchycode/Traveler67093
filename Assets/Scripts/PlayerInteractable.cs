@@ -8,14 +8,19 @@ using UnityEngine.SceneManagement;
 public class PlayerInteractable : MonoBehaviour {
 
     public event EventHandler PlayerInteracted;
+    public Func<PlayerInput, bool> CanPlayerInteract;
+    public Action<PlayerInput> PlayerInteractedAction;
     public string Scene;
 
-    public void DoTheInteractThing()
+    public void DoTheInteractThing(PlayerInput player)
     {
-        Debug.Log("interacting a thing");
-        if(PlayerInteracted != null)
-        {
-            PlayerInteracted(this, EventArgs.Empty);
+        if(CanPlayerInteract == null || CanPlayerInteract(player)) {
+            Debug.Log("interacting with this " + name);
+            if (PlayerInteracted != null) { PlayerInteracted(this, EventArgs.Empty); }
+            if (PlayerInteractedAction != null) { PlayerInteractedAction(player); }
+        }
+        else {
+            Debug.Log("can't interact with this " + name);
         }
     }
 }

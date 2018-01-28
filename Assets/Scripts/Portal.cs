@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(PlayerInteractable))]
 public class Portal : MonoBehaviour
 {
-    public string portalState = "active";
+    public bool isPortalActive = false;
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class Portal : MonoBehaviour
 		Animator animator = GetComponent<Animator>();
         Rigidbody rigidcoconut = GetComponent<Rigidbody>();
         rigidcoconut.isKinematic = true;
-        this.portalState = "inactive";
+        this.isPortalActive = false;
     }
 
     void Update()
@@ -34,7 +34,7 @@ public class Portal : MonoBehaviour
         portalActiveMusic.Play();
         MeshRenderer the_portal = GetComponent<MeshRenderer>();
         the_portal.material.color = Color.red;
-        this.portalState = "active";
+        this.isPortalActive = true;
     }
 
     public void LoadNextScene()
