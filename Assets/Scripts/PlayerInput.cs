@@ -48,6 +48,11 @@ public class PlayerInput : MonoBehaviour {
         {
             interactableThings.Add(interactableThing);
             Debug.Log("we found an interactable thing!");
+            if (interactableThing.name == "Portal")
+            {
+                var portal = GameObject.Find("Portal").GetComponent<Portal>();
+                portal.LoadNextScene();
+            }
         }
     }
 
