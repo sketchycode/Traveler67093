@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerInteractable))]
+[RequireComponent(typeof(PortalCenter))]
 public class Portal : MonoBehaviour
 {
     public bool isPortalActive = false;

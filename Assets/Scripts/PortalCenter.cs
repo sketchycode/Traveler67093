@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Portal))]
 public class PortalCenter : MonoBehaviour
 {
     public void Start() 
