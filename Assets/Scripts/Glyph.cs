@@ -7,6 +7,7 @@ using UnityEngine;
 public class Glyph : MonoBehaviour
 {
     public Transform target;
+    //sdouble[] GlyphAry = { "Translation1", "Translation2", "Translation3" };
 
     private void Start()
     {
@@ -20,7 +21,6 @@ public class Glyph : MonoBehaviour
 
     private void Glyphinteractive_PlayerInteracted(object sender, System.EventArgs e)
     {
-        Debug.Log("test stuff");
         MeshRenderer visibleTranslation = GetComponent<MeshRenderer>();
         var transformtext = GameObject.Find("Translation2").GetComponent<MeshRenderer>();
         visibleTranslation.enabled = true;
