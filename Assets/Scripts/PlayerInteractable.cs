@@ -19,6 +19,5 @@ public class PlayerInteractable : MonoBehaviour {
             if (PlayerInteracted != null) { PlayerInteracted(this, EventArgs.Empty); }
             if (PlayerInteractedAction != null) { PlayerInteractedAction(player); }
         }
-        Debug.Log(PlayerInteracted);
     }
 }
