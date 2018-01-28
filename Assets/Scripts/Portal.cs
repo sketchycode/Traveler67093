@@ -30,9 +30,8 @@ public class Portal : MonoBehaviour
     public void ActivatePortal()
     {
         Debug.Log("portal so active right now");
-        AudioClip sound = new AudioClip();
         AudioSource portalActiveMusic = GetComponent<AudioSource>();
-        //portalActiveMusic.PlayOneShot("Portal Activation Sounds");
+        portalActiveMusic.Play();
         MeshRenderer the_portal = GetComponent<MeshRenderer>();
         the_portal.material.color = Color.red;
         this.portalState = "active";
