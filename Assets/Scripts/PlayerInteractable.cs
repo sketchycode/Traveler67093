@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioPlay))]
 public class PlayerInteractable : MonoBehaviour {
 
     public event EventHandler PlayerInteracted;

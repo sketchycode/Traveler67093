@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(PlayerProximity))]
 public class Portal : MonoBehaviour
 {
-		public bool portal_is_activated = false;
 
     private void Start()
     {

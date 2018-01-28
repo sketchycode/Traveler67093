@@ -1,11 +1,22 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Glyph
+[RequireComponent(typeof(PlayerInteractable))]
+[RequireComponent(typeof(Portal))]
+public class Glyph : MonoBehaviour
 {
     private void Start()
     {
-        Debug.Log("Glyph Test");
+        PlayerInteractable glyphinteractive = GetComponent<PlayerInteractable>();
+        //glyphinteractive.PlayerInteracted += Glyphinteractive_PlayerInteracted;
     }
+
+    private void Glyphinteractive_PlayerInteracted(object sender, System.EventArgs e)
+    {
+        Debug.Log("test");
+    }
+
     void Update()
     {
 
