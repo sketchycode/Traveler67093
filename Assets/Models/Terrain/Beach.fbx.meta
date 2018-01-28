@@ -38,6 +38,8 @@ ModelImporter:
     100060: RockWall
     100062: StoneRamp
     100064: Water
+    100066: GroundCollider
+    100068: GroundLowPoly
     400000: //RootNode
     400002: Cube
     400004: Cube.001
@@ -71,6 +73,8 @@ ModelImporter:
     400060: RockWall
     400062: StoneRamp
     400064: Water
+    400066: GroundCollider
+    400068: GroundLowPoly
     2100000: Material
     2100002: Water
     2100004: No Name
@@ -108,6 +112,8 @@ ModelImporter:
     2300058: RockWall
     2300060: StoneRamp
     2300062: Water
+    2300064: GroundCollider
+    2300066: GroundLowPoly
     3300000: Cube
     3300002: Cube.001
     3300004: Plane
@@ -140,6 +146,8 @@ ModelImporter:
     3300058: RockWall
     3300060: StoneRamp
     3300062: Water
+    3300064: GroundCollider
+    3300066: GroundLowPoly
     4300000: Cube.001
     4300002: Plane
     4300004: Cube
@@ -172,6 +180,8 @@ ModelImporter:
     4300058: Portal
     4300060: Machine
     4300062: Icosphere
+    4300064: GroundCollider
+    4300066: GroundLowPoly
   externalObjects: {}
   materials:
     importMaterials: 1
