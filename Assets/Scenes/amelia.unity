@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scene: 
+  TotalGlyphsTranslated: 0
 --- !u!23 &55135212
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -615,6 +616,18 @@ Prefab:
     - target: {fileID: 1665949244472682, guid: 347264bff19cd594d8bce2b0ec57deb2, type: 2}
       propertyPath: m_Name
       value: Portal2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876850823860976, guid: 347264bff19cd594d8bce2b0ec57deb2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -12.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876850823860976, guid: 347264bff19cd594d8bce2b0ec57deb2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 17.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876850823860976, guid: 347264bff19cd594d8bce2b0ec57deb2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -63.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 347264bff19cd594d8bce2b0ec57deb2, type: 2}
