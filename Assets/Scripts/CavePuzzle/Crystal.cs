@@ -9,6 +9,10 @@ public enum CrystalType { AND, XOR, BLOCKING }
 public class Crystal : MonoBehaviour {
 	public CrystalType crystalType = CrystalType.AND;
 
+    public Material andMaterial;
+    public Material orMaterial;
+    public Material blockingMaterial;
+
 	private PlayerInteractable playerInteractable;
 	private List<LightRay> illuminatingRays = new List<LightRay>();
 
@@ -26,8 +30,6 @@ public class Crystal : MonoBehaviour {
 	void Start () {
 		playerInteractable = GetComponent<PlayerInteractable>();
 		playerInteractable.PlayerInteractedAction = (player) => {
-			var rb = this.GetTheFuckingComponent<Rigidbody>();
-			rb.isKinematic = true;
 			player.PickUpCrystal(this);
 		};
 
@@ -35,7 +37,13 @@ public class Crystal : MonoBehaviour {
 			return player.IsHoldingACrystal == false;
 		};
 
-		// TODO: set appropriate material and/or model
+        var renderer = GetComponentInChildren<Renderer>();
+		switch (crystalType)
+        {
+            case CrystalType.AND: renderer.material = andMaterial; break;
+            case CrystalType.XOR: renderer.material = orMaterial; break;
+            case CrystalType.BLOCKING: renderer.material = blockingMaterial; break;
+        }
 	}
 
 	public void LightRayIlluminated(LightRay lightRay, bool isIlluminating) {
