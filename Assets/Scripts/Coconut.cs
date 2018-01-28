@@ -16,12 +16,12 @@ public class Coconut : MonoBehaviour
 
     private void Coconutinteractive_PlayerInteracted(object sender, System.EventArgs e)
 	{
-		Portal portal_activation = new Portal();
-		portal_activation.ActivatePortal_PlayerProximal();
         Rigidbody bouncycoconut = GetComponent<Rigidbody>();
         bouncycoconut.isKinematic = false;
 
-
+        Debug.Log("coconut fell");
+        var portal = GameObject.Find("Portal").GetComponent<Portal>();
+        portal.ActivatePortal();
     }
 
     void Update()
