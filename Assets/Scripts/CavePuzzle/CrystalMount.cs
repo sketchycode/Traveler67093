@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 [RequireComponent(typeof(PlayerInteractable))]
 public class CrystalMount : MonoBehaviour {
 	public Vector2 activatedRayAngles = Vector2.zero;
 	public Vector3 lightRayOriginOffset = Vector3.up;
-
-	[HideInInspector]
+    
 	public Crystal mountedCrystal;
 
 	public Vector3 LightRayOrigin { get { return transform.position + lightRayOriginOffset; }}
@@ -16,22 +16,31 @@ public class CrystalMount : MonoBehaviour {
 	public Vector3 LightRayDirection { get { return LightRayRotation * Vector3.up; }}
 
 	private LightRay activatedLightRay;
+    private bool isCrystalMounted = false;
 
 	void Start () {
 		PlayerInteractable playerInteractable = GetComponent<PlayerInteractable>();
 		
 		playerInteractable.PlayerInteractedAction = (player) => {
-			if(mountedCrystal != null) {
-				player.PickUpCrystal(mountedCrystal);
-				mountedCrystal = null;
-			}
-			else {
-				player.SetCrystalInMount(this);
-			}
+            if(player.IsHoldingACrystal)
+            {
+                var oldMountedCrystal = mountedCrystal;
+                player.SetCrystalInMount(this);
+
+                if(oldMountedCrystal)
+                {
+                    player.PickUpCrystal(oldMountedCrystal);
+                }
+            }
+            else
+            {
+                player.PickUpCrystal(mountedCrystal);
+                mountedCrystal = null;
+            }
 		};
 
 		playerInteractable.CanPlayerInteract = (player) => {
-			return (player.IsHoldingACrystal && mountedCrystal == null) || (!player.IsHoldingACrystal && mountedCrystal != null);
+			return (player.IsHoldingACrystal || mountedCrystal);
 		};
 
 		activatedLightRay = GetComponentInChildren<LightRay>(true);
@@ -39,12 +48,23 @@ public class CrystalMount : MonoBehaviour {
 		activatedLightRay.transform.rotation = LightRayRotation;
 
 		activatedLightRay.gameObject.SetActive(false);
+
+        if(mountedCrystal)
+        {
+            AcceptCrystal(mountedCrystal);
+        }
 	}
 
 	private void Update() {
 		if (mountedCrystal) {
 			activatedLightRay.gameObject.SetActive(mountedCrystal.IsCrystalActivated);
 		}
+
+        // mostly for editor update
+        if (mountedCrystal && !isCrystalMounted)
+        {
+            AcceptCrystal(mountedCrystal);
+        }
 	}
 
     internal void AcceptCrystal(Crystal crystal)
@@ -53,6 +73,7 @@ public class CrystalMount : MonoBehaviour {
 		crystal.transform.localRotation = Quaternion.identity;
 		crystal.transform.localPosition = lightRayOriginOffset;
 		mountedCrystal = crystal;
+        isCrystalMounted = true;
     }
 
 	private void OnDrawGizmos() {
