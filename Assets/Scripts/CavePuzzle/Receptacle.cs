@@ -25,7 +25,9 @@ public class Receptacle : MonoBehaviour {
 				}
 				Debug.Log("recept active state now: " + value);
 			}
-			receptacleRenderer.material = value ? receptacleActiveMaterial : receptacleInactiveMaterial;
+			if(receptacleRenderer) {
+				receptacleRenderer.material = value ? receptacleActiveMaterial : receptacleInactiveMaterial;
+			}
 		}
 	}
 
