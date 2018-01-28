@@ -40,6 +40,14 @@ ModelImporter:
     100064: Water
     100066: GroundCollider
     100068: GroundLowPoly
+    100070: RockWallCollider
+    100072: RockWallLowPoly
+    100074: RockWallLowPoly.001
+    100076: RockWallLowPoly.002
+    100078: RockWallLowPoly.003
+    100080: RockWallLowPoly.004
+    100082: RockWallLowPoly.005
+    100084: RockWallLowPoly.006
     400000: //RootNode
     400002: Cube
     400004: Cube.001
@@ -75,6 +83,14 @@ ModelImporter:
     400064: Water
     400066: GroundCollider
     400068: GroundLowPoly
+    400070: RockWallCollider
+    400072: RockWallLowPoly
+    400074: RockWallLowPoly.001
+    400076: RockWallLowPoly.002
+    400078: RockWallLowPoly.003
+    400080: RockWallLowPoly.004
+    400082: RockWallLowPoly.005
+    400084: RockWallLowPoly.006
     2100000: Material
     2100002: Water
     2100004: No Name
@@ -114,6 +130,15 @@ ModelImporter:
     2300062: Water
     2300064: GroundCollider
     2300066: GroundLowPoly
+    2300068: RockWallCollider
+    2300070: RockWallLowPoly
+    2300072: RockWallLowPoly.001
+    2300074: RockWallLowPoly.002
+    2300076: RockWallLowPoly.003
+    2300078: RockWallLowPoly.004
+    2300080: RockWallLowPoly.005
+    2300082: RockWallLowPoly.006
+    2300084: //RootNode
     3300000: Cube
     3300002: Cube.001
     3300004: Plane
@@ -148,6 +173,15 @@ ModelImporter:
     3300062: Water
     3300064: GroundCollider
     3300066: GroundLowPoly
+    3300068: RockWallCollider
+    3300070: RockWallLowPoly
+    3300072: RockWallLowPoly.001
+    3300074: RockWallLowPoly.002
+    3300076: RockWallLowPoly.003
+    3300078: RockWallLowPoly.004
+    3300080: RockWallLowPoly.005
+    3300082: RockWallLowPoly.006
+    3300084: //RootNode
     4300000: Cube.001
     4300002: Plane
     4300004: Cube
@@ -182,6 +216,14 @@ ModelImporter:
     4300062: Icosphere
     4300064: GroundCollider
     4300066: GroundLowPoly
+    4300068: RockWallLowPoly.006
+    4300070: RockWallLowPoly.005
+    4300072: RockWallLowPoly.004
+    4300074: RockWallLowPoly.003
+    4300076: RockWallLowPoly.002
+    4300078: RockWallLowPoly.001
+    4300080: RockWallCollider
+    4300082: RockWallLowPoly
   externalObjects: {}
   materials:
     importMaterials: 1

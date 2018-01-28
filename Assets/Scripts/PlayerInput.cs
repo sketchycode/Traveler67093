@@ -51,7 +51,11 @@ public class PlayerInput : MonoBehaviour {
             if (interactableThing.name == "Portal")
             {
                 var portal = GameObject.Find("Portal").GetComponent<Portal>();
-                portal.LoadNextScene();
+                Debug.Log(portal.portalState);
+                if (portal.portalState == "active")
+                {
+                    portal.LoadNextScene();
+                }
             }
         }
     }

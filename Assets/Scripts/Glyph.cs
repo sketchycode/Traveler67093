@@ -14,13 +14,17 @@ public class Glyph : MonoBehaviour
         glyphinteractive.PlayerInteracted += Glyphinteractive_PlayerInteracted;
         MeshRenderer visibleTranslation = GetComponent<MeshRenderer>();
         visibleTranslation.enabled = false;
+        var transformtext = GameObject.Find("Translation2").GetComponent<MeshRenderer>();
+        transformtext.enabled = false;
     }
 
     private void Glyphinteractive_PlayerInteracted(object sender, System.EventArgs e)
     {
         Debug.Log("test stuff");
         MeshRenderer visibleTranslation = GetComponent<MeshRenderer>();
+        var transformtext = GameObject.Find("Translation2").GetComponent<MeshRenderer>();
         visibleTranslation.enabled = true;
+        transformtext.enabled = true;
         transform.LookAt(target);
     }
 
