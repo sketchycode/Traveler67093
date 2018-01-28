@@ -28,6 +28,11 @@ public class Glyph : MonoBehaviour
         transform.LookAt(target);
     }
 
+    private void ShowFinalTranslation_PlayerInteracted(object sender, System.EventArgs e)
+    {
+        Debug.Log("test show final translation");
+    }
+
     void Update()
     {
 
