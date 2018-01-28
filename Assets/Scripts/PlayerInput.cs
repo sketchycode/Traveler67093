@@ -13,6 +13,8 @@ public class PlayerInput : MonoBehaviour {
 
     public Transform lookCamera;
 
+    private List<PlayerInteractable> interactableThings = new List<PlayerInteractable>();
+
     private void Start()
     {
         lookCamera = GetComponentInChildren<Camera>().transform;
