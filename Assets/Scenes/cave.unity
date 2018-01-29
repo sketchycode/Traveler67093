@@ -1829,7 +1829,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 002919844b73bb44bbad9600f0445911, type: 2}
+  - {fileID: 2100000, guid: 09df277463c1ebb4f970f80bb46c6885, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1920,7 +1920,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d3a2821cb0023964f8529be53dbce423, type: 2}
+  - {fileID: 2100000, guid: f10203d08c43cac4a8a4769b4a8e2094, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
