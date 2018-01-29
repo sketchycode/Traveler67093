@@ -20,10 +20,13 @@ public class Coconut : MonoBehaviour
         Rigidbody bouncycoconut = GetComponent<Rigidbody>();
         bouncycoconut.isKinematic = false;
 
-        Debug.Log("coconut fell");
         var portal = GameObject.Find("Portal").GetComponent<Portal>();
         portal.ActivatePortal();
         this.spin.enabled = true;
+        var sandmice = GameObject.Find("SandMice").GetComponent<SandMice>();
+        sandmice.Deactivate_Sandmice();
+        AudioSource activeMusic = GetComponent<AudioSource>();
+        activeMusic.Play();
         //Play coconut fell sound and stop sand mice/beach sound source
         //also play actual coconut fell sound effect.
     }

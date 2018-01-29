@@ -9,7 +9,6 @@ public class PlayerProximity : MonoBehaviour
 
     public void ActivatePortal()
     {
-        Debug.Log("proximal to something");
         if (PlayerProximal != null)
         {
             PlayerProximal(this, EventArgs.Empty);
