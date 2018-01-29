@@ -24,6 +24,11 @@ public class Receptacle : MonoBehaviour {
 					ActiveStateChanged(this, EventArgs.Empty);
 				}
 				Debug.Log("recept active state now: " + value);
+                if (value == true)
+                {
+                    var portal = GameObject.Find("Portal").GetComponent<Portal>();
+                    portal.ActivatePortal();
+                }
 			}
 			if(receptacleRenderer) {
 				receptacleRenderer.material = value ? receptacleActiveMaterial : receptacleInactiveMaterial;
