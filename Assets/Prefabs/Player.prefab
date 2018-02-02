@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 20545230177265452}
   - component: {fileID: 124975913036609340}
   - component: {fileID: 81516948367154070}
-  - component: {fileID: 114109576461448120}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -56,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065206705984608}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 1127.533, y: 794.1, z: 1146.2698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4892148333756398}
@@ -69,13 +68,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1190300439964168}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.20605028, y: -0, z: -0, w: 0.9785415}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4686394971738296}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -23.782001, y: 0, z: 0}
 --- !u!20 &20545230177265452
 Camera:
   m_ObjectHideFlags: 1
@@ -119,24 +118,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1190300439964168}
   m_Enabled: 1
---- !u!114 &114109576461448120
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1190300439964168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a5a3d46f4d919c4296ed276feb8274d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axes: 0
-  sensitivityY: 5
-  minimumX: -360
-  maximumX: 360
-  minimumY: -50
-  maximumY: 50
-  frameCounter: 20
 --- !u!114 &114370491959949480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,7 +133,14 @@ MonoBehaviour:
   strafeSpeed: 3
   rotateSpeed: 3
   sensitivityX: 10
-  lookCamera: {fileID: 0}
+  look:
+    body: {fileID: 4686394971738296}
+    camera: {fileID: 4892148333756398}
+    minRot: -85
+    maxRot: 85
+    cameraRotX: 0
+    bodyRotY: 0
+    sensitivity: 5
 --- !u!124 &124975913036609340
 Behaviour:
   m_ObjectHideFlags: 1

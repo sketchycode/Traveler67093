@@ -4,31 +4,27 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerInput : MonoBehaviour {
-
-    public float speed = 3f;
+	public float speed = 3f;
     public float strafeSpeed = 3f;
     public float rotateSpeed = 3f;
-
-    public float sensitivityX = 10f;
-
-    public Transform lookCamera;
-
+	public float sensitivityX = 10f;
+	public Look look;
     private List<PlayerInteractable> interactableThings = new List<PlayerInteractable>();
     
     // Cave Stuff
     private Crystal heldCrystal;
     public bool IsHoldingACrystal { get { return heldCrystal != null; }}
     // ///////////
-    
 
-    private void Start()
-    {
-        lookCamera = GetComponentInChildren<Camera>().transform;
-    }
+	void Start() {
+		look.CopyRotationFromScene ();
+	}
 
     void Update()
     {
-        CharacterController controller = GetComponent<CharacterController>();
+		look.updateRotValues ();
+		look.updateRotation ();
+		CharacterController controller = GetComponent<CharacterController>();
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         float curSpeed = speed * Input.GetAxis("Vertical");
         controller.SimpleMove(forward * curSpeed);
@@ -36,10 +32,6 @@ public class PlayerInput : MonoBehaviour {
         Vector3 right = transform.TransformDirection(Vector3.right);
         float curStrafeSpeed = Input.GetAxis("Horizontal") * strafeSpeed;
         controller.SimpleMove(right * curStrafeSpeed);
-
-        float rot = Input.GetAxis("Mouse X") * sensitivityX;
-
-        transform.Rotate(Vector3.up, rot);
 
         if(Input.GetKeyDown(KeyCode.Space) && interactableThings.Count > 0)
         {
