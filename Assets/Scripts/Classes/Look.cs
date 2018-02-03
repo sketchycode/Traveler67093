@@ -20,7 +20,6 @@ public class Look {
 	public void updateRotValues() {
 		float deltaX = Input.GetAxis ("Mouse Y") * -this.sensitivity;
 		float deltaY = Input.GetAxis ("Mouse X") * this.sensitivity;
-		Debug.Log (deltaX);
 		this.bodyRotY = this.bodyRotY + deltaY;
 		this.cameraRotX = Mathf.Clamp(this.cameraRotX + deltaX, this.minRot, this.maxRot);;
 	}
