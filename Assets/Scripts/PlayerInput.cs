@@ -9,7 +9,12 @@ public class PlayerInput : MonoBehaviour {
     public float rotateSpeed = 3f;
 	public float sensitivityX = 10f;
 	public Look look;
-    private List<PlayerInteractable> interactableThings = new List<PlayerInteractable>();
+    
+	private List<PlayerInteractable> interactableThings = new List<PlayerInteractable>();
+	private CharacterController controller;
+	private float inputUpDown;
+	private float inputLefRight;
+	private bool isInteracting = false;
     
     // Cave Stuff
     private Crystal heldCrystal;
@@ -17,6 +22,7 @@ public class PlayerInput : MonoBehaviour {
     // ///////////
 
 	void Start() {
+		this.controller = GetComponent<CharacterController>();
 		look.CopyRotationFromScene ();
 	}
 
@@ -24,22 +30,37 @@ public class PlayerInput : MonoBehaviour {
     {
 		look.updateRotValues ();
 		look.updateRotation ();
-		CharacterController controller = GetComponent<CharacterController>();
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        float curSpeed = speed * Input.GetAxis("Vertical");
-        controller.SimpleMove(forward * curSpeed);
-
-        Vector3 right = transform.TransformDirection(Vector3.right);
-        float curStrafeSpeed = Input.GetAxis("Horizontal") * strafeSpeed;
-        controller.SimpleMove(right * curStrafeSpeed);
-
-        if(Input.GetKeyDown(KeyCode.Space) && interactableThings.Count > 0)
-        {
-            for(int i=0; i<interactableThings.Count; i++) {
-                interactableThings[i].DoTheInteractThing(this);
-            }
-        }
+		this.updateInput ();
+		this.MoveCharacter ();
+		this.Interact ();
+        
     }
+
+	void Interact() {
+		if(this.isInteracting && interactableThings.Count > 0)
+		{
+			for(int i=0; i<interactableThings.Count; i++) {
+				interactableThings[i].DoTheInteractThing(this);
+			}
+		}
+	}
+		
+	void updateInput() {
+		this.inputUpDown = Input.GetAxis ("Vertical");
+		this.inputLefRight = Input.GetAxis ("Horizontal");
+		this.isInteracting = Input.GetKeyDown (KeyCode.Space);
+	}
+
+	void MoveCharacter() {
+		Vector3 forwardVector = this.inputUpDown * transform.forward;
+		Vector3 rightVector = this.inputLefRight * transform.right;
+
+		Vector3 desiredVelocity = forwardVector + rightVector;
+		desiredVelocity = Vector3.ClampMagnitude (desiredVelocity, 1);
+		desiredVelocity *= speed;
+
+		this.controller.SimpleMove (desiredVelocity);
+	}
 
     private void OnTriggerEnter(Collider other)
     {
